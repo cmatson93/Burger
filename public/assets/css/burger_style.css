@@ -1,4 +1,7 @@
-
+/*.site-wrapper {
+	background-image: url(../img/burgerWithKnife.jpg) no-repeat / cover transparent;
+}
+*/
 
 .site-wrapper {
   width: 100%;
@@ -16,4 +19,8 @@
   right: 0;
   position: absolute;
   z-index: -1;   
+}
+
+.jumbotron {
+   background: rgba(185, 185, 185, 0.5); 
 }
