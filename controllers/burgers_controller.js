@@ -9,8 +9,9 @@ var burger = require("../models/burger.js");
 router.get("/", function(req, res) {
     burger.selectAll(function(data) {
         var hbsObject = {
-            cats: data
+            burgers: data
         };
+        console.log("get-----");
         console.log(hbsObject);
         res.render("index", hbsObject);
     });
@@ -18,24 +19,24 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-        "name", "devour"
+        "burger_name"
     ], [
-        req.body.name, req.body.devour
+        req.body.burger_name
     ], function(result) {
-        // Send back the ID of the new quote
+        // Send back the ID of the new burger
         res.json({
             id: result.insertId
         });
     });
 });
 
-router.put("/api/bugers/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
-
+    console.log(req.params.id);
     console.log("condition", condition);
 
     burger.updateOne({
-        devour: req.body.devour
+        devoured: req.body.devour
     }, condition, function(result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
