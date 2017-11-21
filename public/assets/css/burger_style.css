@@ -1,7 +1,6 @@
-/*.site-wrapper {
-	background-image: url(../img/burgerWithKnife.jpg) no-repeat / cover transparent;
+body {
+	font-family: 'Cabin', sans-serif;
 }
-*/
 
 .site-wrapper {
   width: 100%;
@@ -22,5 +21,9 @@
 }
 
 .jumbotron {
+   background: rgba(185, 185, 185, 0.5); 
+}
+
+.eat {
    background: rgba(185, 185, 185, 0.5); 
 }
